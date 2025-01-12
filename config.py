@@ -35,15 +35,15 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/noobpiratexd/Sylviemusic",
+    "https://github.com/noobpiratexd/VenomMusic",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
 GIT_TOKEN = getenv(
     "GIT_TOKEN", None
 )  # Fill this variable if your upstream repository is private
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/blionriebin")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/blionriechats")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/piratexleaks")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/Piratexchat")
 
 
 AUTO_SUGGESTION_MODE = getenv("AUTO_SUGGESTION_MODE", "false")

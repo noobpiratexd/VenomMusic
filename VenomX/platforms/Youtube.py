@@ -273,57 +273,57 @@ class YouTubeAPI:
         return title, duration_min, thumbnail, vidid
 
     async def download(
-        self,
-        link: str,
-        mystic,
-        video: Union[bool, str] = None,
-        videoid: Union[bool, str] = None,
-        songaudio: Union[bool, str] = None,
-        songvideo: Union[bool, str] = None,
-        format_id: Union[bool, str] = None,
-        title: Union[bool, str] = None,
-    ) -> str:
-        # If videoid is set, append base URL
-        if videoid:
-            link = self.base + link
-        
-        cobalt = Cobalt(api_instance="https://cobalt-api.kwiatekmiki.com")
-        
-        loop = asyncio.get_running_loop()
+    self,
+    link: str,
+    mystic,
+    video: Union[bool, str] = None,
+    videoid: Union[bool, str] = None,
+    songaudio: Union[bool, str] = None,
+    songvideo: Union[bool, str] = None,
+    format_id: Union[bool, str] = None,
+    title: Union[bool, str] = None,
+) -> str:
+    # If videoid is set, append base URL
+    if videoid:
+        link = self.base + link
 
-        async def audio_dl():
-            # Download audio
-            path = await cobalt.download(url=link, quality="audio")
-            return path
+    cobalt = Cobalt(api_instance="https://cobalt-api.kwiatekmiki.com")  # Assuming this is correct
 
-        async def video_dl():
-            # Download video
-            path = await cobalt.download(url=link, quality="720")
-            return path
+    loop = asyncio.get_running_loop()
 
-        async def song_video_dl():
-            # Download song video
-            path = await cobalt.download(url=link, quality="360")
-            return path
-        
-        # Decide on what type of download to perform
-        if songvideo:
-            downloaded_file = await song_video_dl()
-            fpath = f"downloads/{title}.mp4"
-            return fpath, downloaded_file
+    async def audio_dl():
+        # Download audio
+        path = await cobalt.download(url=link, quality="audio")
+        return path
 
-        elif songaudio:
-            downloaded_file = await audio_dl()
-            fpath = f"downloads/{title}.mp3"
-            return fpath, downloaded_file
+    async def video_dl():
+        # Download video
+        path = await cobalt.download(url=link, quality="720")
+        return path
 
-        elif video:
-            downloaded_file = await video_dl()
-            fpath = f"downloads/{title}.mp4"
-            return fpath, downloaded_file
+    async def song_video_dl():
+        # Download song video
+        path = await cobalt.download(url=link, quality="360")
+        return path
 
-        else:
-            # Default case when no specific download type is mentioned
-            downloaded_file = await audio_dl()
-            fpath = f"downloads/{title}.mp3"
-            return fpath, downloaded_file
+    # Decide on what type of download to perform
+    if songvideo:
+        downloaded_file = await song_video_dl()
+        fpath = f"downloads/{title}.mp4"
+        return fpath, downloaded_file
+
+    elif songaudio:
+        downloaded_file = await audio_dl()
+        fpath = f"downloads/{title}.mp3"
+        return fpath, downloaded_file
+
+    elif video:
+        downloaded_file = await video_dl()
+        fpath = f"downloads/{title}.mp4"
+        return fpath, downloaded_file
+
+    else:
+        # Default case when no specific download type is mentioned
+        downloaded_file = await audio_dl()
+        fpath = f"downloads/{title}.mp3"
+        return fpath, downloaded_file

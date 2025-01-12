@@ -6,8 +6,6 @@ from pyrogram import filters
 
 load_dotenv()
 
- 
-
 # Get this value from my.telegram.org/apps
 API_ID = int(getenv("API_ID", ""))
 API_HASH = getenv("API_HASH", "")
@@ -37,15 +35,15 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/venombolteop/VenomMusic",
+    "https://github.com/noobpiratexd/Sylviemusic",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
 GIT_TOKEN = getenv(
     "GIT_TOKEN", None
 )  # Fill this variable if your upstream repository is private
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/VenomOwners")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/Venom_Chatz")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/blionriebin")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/blionriechats")
 
 
 AUTO_SUGGESTION_MODE = getenv("AUTO_SUGGESTION_MODE", "false")
@@ -87,17 +85,17 @@ clean = {}
 
 
 START_IMG_URL = getenv(
-    "START_IMG_URL", "https://te.legra.ph/file/754e95311eccb48b7aafc.jpg"
+    "START_IMG_URL", "https://graph.org/file/0c1c9a9d513dafee4dd44.jpg"
 )
 PING_IMG_URL = getenv(
-    "PING_IMG_URL", "https://te.legra.ph/file/754e95311eccb48b7aafc.jpg"
+    "PING_IMG_URL", "https://graph.org/file/6d5f53f57da875015d7c0.jpg"
 )
-PLAYLIST_IMG_URL = "https://te.legra.ph/file/754e95311eccb48b7aafc.jpg"
-STATS_IMG_URL = "https://te.legra.ph/file/754e95311eccb48b7aafc.jpg"
-TELEGRAM_AUDIO_URL = "https://te.legra.ph/file/754e95311eccb48b7aafc.jpg"
-TELEGRAM_VIDEO_URL = "https://te.legra.ph/file/754e95311eccb48b7aafc.jpg"
+PLAYLIST_IMG_URL = "https://graph.org/file/ce4e95ae43fe349f3e2cf.jpg"
+STATS_IMG_URL = "https://graph.org/file/3ea7c650ad015b9126057.jpg"
+TELEGRAM_AUDIO_URL = "https://graph.org/file/16cf516907de939de812f.jpg"
+TELEGRAM_VIDEO_URL = "https://graph.org/file/41a4d3be95d358721db40.jpg"
 STREAM_IMG_URL = "https://te.legra.ph/file/754e95311eccb48b7aafc.jpg"
-SOUNCLOUD_IMG_URL = "https://te.legra.ph/file/754e95311eccb48b7aafc.jpg"
+SOUNCLOUD_IMG_URL = "https://graph.org/file/a22c7a327d6e56b129fb7.jpg"
 YOUTUBE_IMG_URL = "https://te.legra.ph/file/754e95311eccb48b7aafc.jpg"
 SPOTIFY_ARTIST_IMG_URL = "https://te.legra.ph/file/754e95311eccb48b7aafc.jpg"
 SPOTIFY_ALBUM_IMG_URL = "https://te.legra.ph/file/754e95311eccb48b7aafc.jpg"

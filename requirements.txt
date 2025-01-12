@@ -24,4 +24,5 @@ tgcrypto
 yt-dlp
 youtube-search
 youtube-search-python
+pybalt
 unidecode
